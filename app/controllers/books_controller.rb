@@ -50,7 +50,7 @@ end
   private
 
   def book_params
-   params.require(:book).permit(:title, :description, :author, :category_id)
+   params.require(:book).permit(:title, :description, :author, :category_id, :photo)
   end
 
   def find_book
