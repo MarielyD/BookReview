@@ -8,12 +8,19 @@
 
 		<div class="book-info">
 
-			<h2><%= @book.title %></h2>
+			<h2><strong><%= @book.title %></strong></h2>
 			<h3>by <%= @book.author %></h3>
 			<h2 class="avg-rating">Average Rating: <%= @book.reviews.average(:rating) %> / 5</h2>
 			<span class="number-of-reviews">Based on <%= @book.reviews.count %> reviews</span>
 			<h4><%= @book.category.name %></h3>
 				<p><%= @book.description %></p>
+
+				<% if user_signed_in? %>
+				<% if @book.user_id == current_user.id %>
+				<%= link_to "Edit", edit_book_path(@book) %>
+				<%= link_to "Delete", book_path(@book), method: :delete, data: {confirm: "Are you sure?"} %>
+				<% end %>
+				<% end %>
 
 			</div>
 		</div>
@@ -38,25 +45,3 @@
 		</div>
 
 	</div>
-
-<br><br>
-	<%= link_to "Back", root_path %>
-	<% if user_signed_in? %>
-
-	<% if @book.user_id == current_user.id %>
-
-	<%= link_to "Edit", edit_book_path(@book) %>
-	<%= link_to "Delete", book_path(@book), method: :delete, data: {confirm: "Are you sure?"} %>
-	<% end %>
-
-	<% end %>
-
-	<script>
-		$('.review-rating').raty({
-			readOnly: true,
-			score: function() {
-				return $(this).attr('data-score');
-			},
-			path: '/assets/'
-		});
-	</script>
