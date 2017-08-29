@@ -7,7 +7,13 @@ end
 
 gem 'simple_form', '~> 3.5'
 gem 'rails', '~> 5.1.3'
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+# Use postgreSQL as the database for Active Record in Production
+group :production do
+  gem 'pg'
+end
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
