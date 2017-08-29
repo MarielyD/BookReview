@@ -22,20 +22,21 @@
  	box-sizing: border-box;
  	background-color: #fff;
  	border-radius: 5px;
- 	box-shadow: 3px 3px 5px 6px #ccc;
+ 	box-shadow: 3px 3px 5px 5px #ccc;
  	padding: 1.5em 1.25em;
+  // border: 1px solid gray;
  }
 
 
  /* General styles */
 
  body {
- 	background-color: #f5f5f5;
- 	font-family: 'Lora', serif;
+ 	background-color: #F0F8FF;
+ 	font-family: helvetica;
  }
 
  h1, h2, h3, h4, h5, h6 {
- 	font-family: 'Ubuntu', sans-serif;
+ 	font-family: helvetica, sans-serif;
  	font-weight: 300;
  }
 
@@ -165,7 +166,7 @@
  	}
 
  	.avg-rating {
- 		font-size: 1.5em;
+ 		font-size: 1em;
  		margin-top: 15px;
  		margin-bottom: 5px;
  	}
@@ -311,4 +312,12 @@
  		margin-top: 0;
  	}
 
+ }
+
+ .col-md-3{
+  display: block;
+ }
+
+ h3{
+   font-size: 16px;
  }
